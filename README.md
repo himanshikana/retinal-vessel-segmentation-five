@@ -74,7 +74,7 @@ pip install -r requirements.txt
 
 Core packages: `torch`, `albumentations`, `opencv-python-headless`, `matplotlib`, `numpy`, `pandas`, `Pillow`
 
-### 2. Verify your dataset layout
+### 2. Verify  dataset layout
 
 my data should be at:
 ```
