@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large model weights (Exceeds GitHub's 100MB limit)
+weights/*.pth
+weights/*.pt
+*.pth
+*.pt
+
+# Large dataset files (Gigabytes of raw images)
+data/
+*.zip
+*.tar.gz
+
+# Operating System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment files
+env/
+venv/
+ENV/
