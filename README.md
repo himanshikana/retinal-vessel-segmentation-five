@@ -14,10 +14,9 @@ Retinal vessel maps are clinically important: abnormal vessel patterns appear ea
 
 Most beginner segmentation repos have these problems — all of which are fixed here:
 
-| Common Problem | What We Did Instead |
+| Common Problem | What I Did Instead |
 |---|---|
-| Hardcoded paths like `/content/drive/MyDrive/...` that only work in the author's Colab | All paths resolve from the script location using `Path(__file__).resolve().parent` — runs anywhere |
-| Dataset loads images and masks by sorted index, so any missing file silently misaligns the pairs | Strict **filename-stem matching**: each image file is paired only with the mask that has the exact same name |
+
 | Plain BCE loss gives ~95% accuracy by predicting everything as background | **Compound loss** = Binary Cross-Entropy + Soft Dice Loss, directly penalising missed vessels |
 | No augmentation, so the model memorises fundus orientations | 6 synchronized augmentations via **Albumentations** — both image and mask transform together |
 | Evaluation reports only loss or pixel accuracy | Reports **Dice, IoU, Sensitivity, Specificity, Precision, Accuracy** — all with standard deviation across samples |
@@ -77,7 +76,7 @@ Core packages: `torch`, `albumentations`, `opencv-python-headless`, `matplotlib`
 
 ### 2. Verify your dataset layout
 
-Your data should be at:
+my data should be at:
 ```
 data/fives/train/Original/       ← fundus images (.png)
 data/fives/train/Ground truth/   ← masks with identical filenames
